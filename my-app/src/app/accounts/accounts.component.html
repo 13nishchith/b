@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <app-new-account
+        (accountAdded)="onAccountAdded($event)"
+      ></app-new-account>
+      <app-account
+        *ngFor="let account of accounts; let i = index"
+        [account]="account"
+        [id]="i"
+        (accountDeletedEvent)="onAccountDeleted($event)"
+        (accountStatusChangeEvent)="onStatusChange($event)"
+      ></app-account>
+    </div>
+  </div>
+</div>

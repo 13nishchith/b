@@ -1,0 +1,79 @@
+download node.js from https://nodejs.org/en/download/
+	Install node and npm
+
+verify installation
+	node --version
+	npm --version
+	
+Open command prompt in administrator mode
+	
+Install Angular CLI
+- Angular CLI is the tool required to create angular projects
+- To install angular cli
+	npm install -g @angular/cli
+- verify installation
+	ng --version	
+
+Create first project 
+- open command prompt as 'Run as Administrator'
+- ng new my-app --no-strict
+		Would you like to add Angular routing? (y/N) - N
+		stylesheet format: CSS
+- cd my-app
+- ng serve 
+- open the browser and go to http://localhost:4200 -> to access your application
+
+Root html file - src->app->app.component.html
+		
+Steps to include bootstrap to your angular project
+--------------------------------------------------
+	cd my-app		
+	npm install --save bootstrap@3
+	edit angular.json file and add the following line to styles in line.25
+	"node_modules/bootstrap/dist/css/bootstrap.min.css",
+	after change your styles should look like tihs
+	        "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+	ctrl+c to stop the server
+	ng serve - to run again
+	
+to create a component
+- cd my-app
+- ng generate component product	
+- delete the file ending with .spec.ts
+
+to delete the component
+- create the folder of the component
+- remove all references to the component in app.module.ts file
+
+steps to create a component manually
+- under the app folder, create a folder for your component
+- inside the folder create 2 files - .component.html and .component.ts
+- app.module and register your component.
+
+
+1. First create the products component
+    ng g c products --skip-tests
+2. create the product component inside products
+	ng g c products\product --skip-tests
+
+
+
+to fix the bootstrap issue
+---------------------------
+- npm uninstall --save bootstrap
+- npm install --save bootstrap@3
+
+
+Steps to add underscore library
+-------------------------------
+npm install --save underscore
+In the .ts flie -> import * as _ from 'underscore';
+
+How to stop server
+-------------------
+ctrl+c
+
+
